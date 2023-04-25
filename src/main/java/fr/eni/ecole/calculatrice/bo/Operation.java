@@ -3,13 +3,24 @@ package fr.eni.ecole.calculatrice.bo;
 import java.util.InputMismatchException;
 
 public class Operation {
+    final long minLong = -2147483648;
+    final long maxLong = 2147483647;
 
-    public int ajouter(int entier1, int entier2){
-        int somme= 0;
+    int somme= 0;
+    long resLong = 0;
+
+    public int ajouter(int entier1, int entier2)throws DepassementCapaciteException{
+
 
         try {
 
             somme = entier1 + entier2;
+            resLong = (long) entier1 + (long) entier2;
+
+
+            if (resLong<minLong || resLong> maxLong){
+                throw new DepassementCapaciteException();
+            }
 
         }catch (InputMismatchException e){
             System.err.println("Saisie invalide. Réessayez");
@@ -33,20 +44,22 @@ public class Operation {
         return resultat;
     }
 
-    public int multiplier(int entier1, int entier2){
+    public int multiplier(int entier1, int entier2)throws DepassementCapaciteException{
 
         int resultat = 0;
 
-
         try {
 
+
             resultat = entier1 * entier2;
+            resLong = (long) entier1 * (long)entier2;
 
         }catch (InputMismatchException e){
             System.err.println("Saisie invalide. Réessayez");
         }
 
-        if(resultat > 2147483647){
+        if(resLong > maxLong){
+            throw new DepassementCapaciteException();
 
         }else {
             System.out.println("la mutiliplacation de " + entier1 + " avec " + entier2 +  " dépasse la taille maximale alouée en " +
