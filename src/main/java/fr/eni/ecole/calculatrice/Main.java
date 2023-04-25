@@ -22,22 +22,12 @@ public class Main {
         System.out.println("Entrez un second chiffre entier entre -2 147 483 648 et + 2 147 483 647");
         int nb2 = nombre2.nextInt();
 
-        switch (symbol){
-
-            case '+' :
-                op.ajouter(nb1, nb2);
-                break;
-            case  '-' :
-                op.soustraire(nb1, nb2);
-                break;
-            case '*' :
-                op.multiplier(nb1, nb2);
-                break;
-            case '/' :
-                op.diviser(nb1, nb2);
-                break;
-            default:
-                System.out.println("Symbole inconnu");
+        switch (symbol) {
+            case '+' -> op.ajouter(nb1, nb2);
+            case '-' -> op.soustraire(nb1, nb2);
+            case '*' -> op.multiplier(nb1, nb2);
+            case '/' -> op.diviser(nb1, nb2);
+            default -> System.out.println("Symbole inconnu");
         }
     }
 }

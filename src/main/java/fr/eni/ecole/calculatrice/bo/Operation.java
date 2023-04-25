@@ -9,7 +9,7 @@ public class Operation {
     int somme= 0;
     long resLong = 0;
 
-    public int ajouter(int entier1, int entier2)throws DepassementCapaciteException{
+    public void ajouter(int entier1, int entier2)throws DepassementCapaciteException{
 
 
         try {
@@ -26,10 +26,9 @@ public class Operation {
             System.err.println("Saisie invalide. Réessayez");
         }
         System.out.println(somme);
-        return somme;
     }
 
-    public int soustraire(int entier1, int entier2){
+    public void soustraire(int entier1, int entier2){
         int resultat = 0;
 
         try{
@@ -41,10 +40,9 @@ public class Operation {
 
         }
         System.out.println(resultat);
-        return resultat;
     }
 
-    public int multiplier(int entier1, int entier2)throws DepassementCapaciteException{
+    public void multiplier(int entier1, int entier2)throws DepassementCapaciteException{
 
         int resultat = 0;
 
@@ -66,10 +64,9 @@ public class Operation {
                     "mémoire. réessayez avec d'autres valueurs plus petites." );
         }
         System.out.println(resultat);
-        return resultat;
     }
 
-    public int diviser(int entier1, int entier2){
+    public void diviser(int entier1, int entier2){
         int resultat = 0;
 
         try {
@@ -80,6 +77,5 @@ public class Operation {
             System.err.println("Il est impossible de diviser par 0");
         }
         System.out.println(resultat);
-        return resultat;
     }
 }
